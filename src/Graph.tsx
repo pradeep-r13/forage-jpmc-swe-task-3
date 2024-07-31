@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
 import { Table, TableData } from '@finos/perspective';
-import { ServerRespond } from './DataStreamer';
+import React, { Component } from 'react';
 import { DataManipulator } from './DataManipulator';
+import { ServerRespond } from './DataStreamer';
 import './Graph.css';
 
 interface IProps {
@@ -42,7 +42,7 @@ class Graph extends Component<IProps, {}> {
       elem.setAttribute('row-pivots', '["timestamp"]');   // x-axis
 
       // only want to track ratio, upper_bound, lower_bound, trigger_alert of a datapoint
-      elem.setAttribute('columns', '["ratio", "upper_bound", "lower_bound", "trigger_alert"]');
+      elem.setAttribute('columns', '["ratio", "lower_bound", "upper_bound", "trigger_alert"]');
       elem.setAttribute('aggregates', JSON.stringify({
         price_abc: 'avg',
         price_def: 'avg',

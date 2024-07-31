@@ -2,13 +2,13 @@ import { ServerRespond } from './DataStreamer';
 
 // DataManipulator class return object must correspond to the Graph table schema
 export interface Row {
-    price_abc: number;
-    price_def: number;
-    ratio: number;
-    timestamp: Date;
-    upper_bound: number;
-    lower_bound: number;
-    trigger_alert: number | undefined;
+    price_abc: number,
+    price_def: number,
+    ratio: number,
+    timestamp: Date,
+    upper_bound: number,
+    lower_bound: number,
+    trigger_alert: number | undefined,
 }
 
 export class DataManipulator {
@@ -28,7 +28,7 @@ export class DataManipulator {
     upper_bound : upperBound,
     lower_bound : lowerBound,
     trigger_alert : (ratio > upperBound || ratio < lowerBound) ? ratio : undefined,
-   } 
+   };
 
   }
 }
